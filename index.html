@@ -37,7 +37,7 @@
                 alert("Location Tracking is not supported by this browser.");
         }
         else
-            makeRequest(`http://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}`);
+            makeRequest(`https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}`);
     }
 
     function showPosition(position) 
@@ -45,7 +45,7 @@
         let apiKey = "44283735812afd1f31a23ba0d72b42f9";
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
-        makeRequest(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);//made the request here
+        makeRequest(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`);//made the request here
     }
 
     function makeRequest(apiCall)
@@ -183,7 +183,7 @@
                                         let lon = position.coords.longitude;
                                         new Promise(
                                             (myResolve) => {
-                                                makeRequest(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`, myResolve);
+                                                makeRequest(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`, myResolve);
                                             }
                                         ).then(
                                             (value) => {    console.log("inside parentPromise:" +value);   }
